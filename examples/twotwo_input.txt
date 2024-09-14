@@ -1,0 +1,7 @@
+diagram_class = twotwo
+channel_type = s-channel
+process = q qbar > t tbar
+mediator = g
+med_arrow = false
+io_arrows = q qbar t tbar
+output_filename = qq_tt_schannel

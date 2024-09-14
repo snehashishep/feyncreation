@@ -1,0 +1,24 @@
+# Ignore Python bytecode and cache files
+__pycache__/
+*.py[cod]
+*.so
+
+# Ignore virtual environment directories
+venv/
+.venv/
+
+# Ignore distribution/build files
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Ignore logs, temporary files, and system files
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# Ignore input/output files generated for examples
+examples/*.png
+*.png
