@@ -16,7 +16,7 @@
 Clone the repository and install the package:
 
 ```bash
-git clone https://github.com/yourusername/feyncreation.git
+git clone git@github.com:snehashishep/feyncreation.git
 cd feyncreation
 pip install -e .
 ```
