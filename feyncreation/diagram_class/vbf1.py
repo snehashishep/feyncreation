@@ -19,9 +19,9 @@ class VBF1:
         v1 = LabeledVertex(xy=(.4, .8), label='')
         v2 = LabeledVertex(xy=(.4, .2), label='')
         v3 = LabeledVertex(xy=(.6, .5), label='')  # Intermediate vertex
-        out1 = LabeledVertex(xy=(.9, .8), label=particle_dict.get(outgoing[0].lower(), outgoing[0]), xoffset=0.05)
-        out2 = LabeledVertex(xy=(.9, .2), label=particle_dict.get(outgoing[1].lower(), outgoing[1]), xoffset=0.05)
-        midout1 = LabeledVertex(xy=(.9, .5), label=particle_dict.get(fused.lower(), fused), xoffset=0.05)
+        out1 = LabeledVertex(xy=(.85, .8), label=particle_dict.get(outgoing[0].lower(), outgoing[0]), xoffset=0.07)
+        out2 = LabeledVertex(xy=(.85, .2), label=particle_dict.get(outgoing[1].lower(), outgoing[1]), xoffset=0.07)
+        midout1 = LabeledVertex(xy=(.85, .5), label=particle_dict.get(fused.lower(), fused), xoffset=0.07)
 
         # Draw the vertices and labels
         in1.draw(ax)

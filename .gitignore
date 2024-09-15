@@ -20,5 +20,4 @@ dist/
 .idea/
 
 # Ignore input/output files generated for examples
-examples/*.png
-*.png
+./*.png

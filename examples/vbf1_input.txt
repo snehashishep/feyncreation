@@ -3,4 +3,4 @@ process = mu+ mu- > vm mu- h+
 vec_bosons = w+ z
 vec_arrows = none
 io_arrows = mu+ mu- mu- h+
-output_filename = vbf_diagram
+output_filename = examples/vbf_mupmun_munuhp

@@ -1,0 +1,6 @@
+diagram_class = vbf1
+process = g g > t tbar h
+vec_bosons = tbar t
+vec_arrows = tbar t
+io_arrows = t tbar
+output_filename = examples/gg_tth

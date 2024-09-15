@@ -7,13 +7,14 @@ from feyncreation.common.particles import particle_styles, particle_dict  # Impo
 diagram_registry = {
     'twotwo': {
         's-channel': twotwo.SChannel,
-        't-channel': twotwo.TChannel
+        't-channel': twotwo.TChannel,
+        'four-point': twotwo.FourPoint  # Add four-point diagram to registry
     },
     'vbf1': vbf1.VBF1
 }
 
 # List of standard vector bosons
-standard_vector_bosons = ['z', 'w+', 'w-', 'gamma']
+standard_vector_bosons = ['z', 'w+', 'w-', 'gamma', 'zp']
 
 def parse_process(input_str):
     """Parses the process string to extract incoming and outgoing particles."""
@@ -57,17 +58,30 @@ def get_user_input_from_card(card_path):
                 mediator = input_data.get('mediator', '').strip()
                 med_arrow = input_data.get('med_arrow', 'false') == 'true'  # Parse mediator arrow as true/false
 
-                diagram.draw(
-                    incoming=incoming,
-                    outgoing=outgoing,
-                    mediator=mediator,
-                    arrow_incoming1=incoming[0] in io_arrows,
-                    arrow_incoming2=incoming[1] in io_arrows,
-                    arrow_outgoing1=outgoing[0] in io_arrows,
-                    arrow_outgoing2=outgoing[1] in io_arrows,
-                    arrow_mediator=med_arrow,
-                    output_filename=input_data.get('output_filename', 'output')
-                )
+                if channel_type == 'four-point':
+                    # For four-point, no mediator
+                    diagram.draw(
+                        incoming=incoming,
+                        outgoing=outgoing,
+                        arrow_incoming1=incoming[0] in io_arrows,
+                        arrow_incoming2=incoming[1] in io_arrows,
+                        arrow_outgoing1=outgoing[0] in io_arrows,
+                        arrow_outgoing2=outgoing[1] in io_arrows,
+                        output_filename=input_data.get('output_filename', 'four_point_diagram')
+                    )
+                else:
+                    # For s-channel and t-channel
+                    diagram.draw(
+                        incoming=incoming,
+                        outgoing=outgoing,
+                        mediator=mediator,
+                        arrow_incoming1=incoming[0] in io_arrows,
+                        arrow_incoming2=incoming[1] in io_arrows,
+                        arrow_outgoing1=outgoing[0] in io_arrows,
+                        arrow_outgoing2=outgoing[1] in io_arrows,
+                        arrow_mediator=med_arrow,
+                        output_filename=input_data.get('output_filename', 'output')
+                    )
             else:
                 print(f"Channel type '{channel_type}' not recognized.")
         
@@ -114,28 +128,43 @@ def get_user_input():
 
         if diagram_class in diagram_registry:
             if diagram_class == 'twotwo':
-                channel_type = input("Choose channel type (s-channel/t-channel): ").lower()
+                channel_type = input("Choose channel type (s-channel/t-channel/four-point): ").lower()
                 process_str = input("Enter the process (e.g., 'q qbar > t tbar'): ").strip()
                 incoming, outgoing = parse_process(process_str)
 
                 if incoming and outgoing:
-                    mediator = input("Enter the mediator: ").strip().lower()
-                    med_arrow = input("Do you want a mediator arrow? (true/false): ").lower() == 'true'
-                    io_arrows = input("Which incoming/outgoing particles do you want arrows? (e.g., 'q qbar'): ").strip().split()
-                    output_filename = input("Enter the output filename (without extension): ").strip()
+                    if channel_type == 'four-point':
+                        io_arrows = input("Which incoming/outgoing particles do you want arrows? (e.g., 'q qbar'): ").strip().split()
+                        output_filename = input("Enter the output filename (without extension): ").strip()
 
-                    diagram = diagram_registry[diagram_class][channel_type]()
-                    diagram.draw(
-                        incoming=incoming,
-                        outgoing=outgoing,
-                        mediator=mediator,
-                        arrow_incoming1=incoming[0] in io_arrows,
-                        arrow_incoming2=incoming[1] in io_arrows,
-                        arrow_outgoing1=outgoing[0] in io_arrows,
-                        arrow_outgoing2=outgoing[1] in io_arrows,
-                        arrow_mediator=med_arrow,
-                        output_filename=output_filename
-                    )
+                        diagram = diagram_registry[diagram_class][channel_type]()
+                        diagram.draw(
+                            incoming=incoming,
+                            outgoing=outgoing,
+                            arrow_incoming1=incoming[0] in io_arrows,
+                            arrow_incoming2=incoming[1] in io_arrows,
+                            arrow_outgoing1=outgoing[0] in io_arrows,
+                            arrow_outgoing2=outgoing[1] in io_arrows,
+                            output_filename=output_filename
+                        )
+                    else:
+                        mediator = input("Enter the mediator: ").strip().lower()
+                        med_arrow = input("Do you want a mediator arrow? (true/false): ").lower() == 'true'
+                        io_arrows = input("Which incoming/outgoing particles do you want arrows? (e.g., 'q qbar'): ").strip().split()
+                        output_filename = input("Enter the output filename (without extension): ").strip()
+
+                        diagram = diagram_registry[diagram_class][channel_type]()
+                        diagram.draw(
+                            incoming=incoming,
+                            outgoing=outgoing,
+                            mediator=mediator,
+                            arrow_incoming1=incoming[0] in io_arrows,
+                            arrow_incoming2=incoming[1] in io_arrows,
+                            arrow_outgoing1=outgoing[0] in io_arrows,
+                            arrow_outgoing2=outgoing[1] in io_arrows,
+                            arrow_mediator=med_arrow,
+                            output_filename=output_filename
+                        )
 
             elif diagram_class == 'vbf1':
                 process_str = input("Enter the process (e.g., 'mu+ mu- > vm vmbar h'): ").strip()
