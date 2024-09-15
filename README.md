@@ -48,16 +48,16 @@ python3 examples/*_script.py
 ## Example Diagrams
 
 ### Pseudoscalar DM annihilation (`twotwo.four-point`)
-![four-point](examples/dm_annihilation.png)
+<img src="examples/dm_annihilation.png" alt="four-point" width="200"/>
 
 ### $hZ$ production from $e^+ e^-$ collision (`twotwo.s-channel`)
-![s-channel](examples/ee_hz_schannel.png)
+<img src="examples/ee_hz_schannel.png" alt="s-channel" width="200"/>
 
 ### $t$-channel $q\bar{q}\to t\bar{t}$ (`twotwo.t-channel`)
-![t-channel](examples/qq_tt_tchannel.png)
+<img src="examples/qq_tt_tchannel.png" alt="t-channel" width="200"/>
 
 ### VBF production of charged Scalar from $\mu^+ \mu^-$ collision (`vbf1`)
-![VBF](examples/vbf_mupmun_munuhp.png)
+<img src="examples/vbf_mupmun_munuhp.png" alt="VBF" width="200"/>
 
 ### $gg \to t\bar{t}h$ production, looks like VBF (`vbf1`)
-![VBFlike](examples/gg_tth.png)
+<img src="examples/gg_tth.png" alt="VBFlike" width="200"/> 
