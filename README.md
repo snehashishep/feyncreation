@@ -11,6 +11,15 @@
 - Supports interactive, card-based, and script-based generation.
 - Own particles and their latex rendering can be added manually in the `particles.py` file.
 
+## Requirements
+
+For plotting and drawing, one requires `matplotlib` and `feynman` packages. They are already included in the `setup.py` so no need to install them separately.
+
+Some Ubuntu computers show an error in rendering the LaTeX labels due to the absence of the `cm-super` package. This is the fix for that:
+```bash
+sudo apt install cm-super
+```
+
 ## Installation
 
 Clone the repository and install the package:
