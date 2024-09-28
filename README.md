@@ -71,5 +71,5 @@ python3 examples/*_script.py
 ### $gg \to t\bar{t}h$ production, looks like VBF (`vbf1`)
 <img src="examples/gg_tth.png" alt="VBFlike" width="200"/> 
 
-### $mu+ mu- \to mu+ \nu_\mu H^- H^0$ production, VBF with a $t$-channel mediator (`vbf2.t-channel`)
+### $\mu+ \mu- \to \mu+ \nu_\mu H^- H^0$ production, VBF with a $t$-channel mediator (`vbf2.t-channel`)
 <img src="examples/vbf_hph0_mucol.png" alt="VBF2" width="200"/> 
