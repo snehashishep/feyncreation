@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='feyncreation',
-    version='0.1',
+    version='0.2',
     description='A package for drawing Feynman diagrams',
     author='Snehashis Parashar',
     packages=find_packages(),

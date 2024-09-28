@@ -1,0 +1,12 @@
+diagram_class = vbf2
+vbf2_type = t-channel
+process = mu+ mu- > mu+ vm h- h2
+vec_bosons = z w-
+io_arrows = mu+ mu- mu+
+vec_arrows = none
+arrow_fused1 = false
+arrow_fused2 = false
+mediator = w+
+arrow_mediator = false
+output_filename = examples/vbf_hph0_mucol
+

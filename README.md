@@ -4,8 +4,8 @@
 
 ## Features
 
-- Currently has two classes of diagrams: `twotwo` that handles 2->2 processes, and `vbf1` that has VBF-type production of single particles.
-- Has four-point contact annihilation, s-channel, and t-channel diagrams for `twotwo` processes.
+- Currently has three classes of diagrams: `twotwo` that handles 2->2 processes, `vbf1` that has VBF-type production of single particles, and `vbf2` with VBF-type pair production.
+- Has four-point contact annihilation, s-channel, and t-channel diagrams for `twotwo` and `vbf2` processes.
 - Uses LaTeX to render particle labels in diagrams.
 - Supports customizable arrows for incoming, outgoing, and mediator particles.
 - Supports interactive, card-based, and script-based generation.
@@ -42,9 +42,9 @@ and follow the prompts.
 
 - If you want to use an input card, type `yes` when prompted. Card file examples are in `examples/*_input.txt`.
 - Type relative path to the card file in the prompt.
-- If not using card file, choose the process class: currently we have `twotwo` and `vbf1`.
-- For `twotwo`, choose `four-point`, `s-channel` or `t-channel` at the next prompt.
-- Enter the basic process, like `q qbar > t tbar` for `twotwo`, `q qbar > q qbar h` for `vbf1`.
+- If not using card file, choose the process class: currently we have `twotwo`, `vbf1`, `vbf2`.
+- For `twotwo` or `vbf2`, choose `four-point`, `s-channel` or `t-channel` at the next prompt.
+- Enter the basic process, like `q qbar > t tbar` for `twotwo`, `q qbar > q qbar h` for `vbf1`, `q qbar > q qbar h h` for `vbf2`
 - Follow the rest of the prompts accordingly. When prompted with arrow requirement for incoming/outgoing/vector boson particles, enter the particle names separated by space.
 - Lastly, enter the `filename` so that your file will be saved as `filename.png`.
 
@@ -70,3 +70,6 @@ python3 examples/*_script.py
 
 ### $gg \to t\bar{t}h$ production, looks like VBF (`vbf1`)
 <img src="examples/gg_tth.png" alt="VBFlike" width="200"/> 
+
+### $mu+ mu- \to mu+ \nu_\mu H^- H^0$ production, VBF with a $t$-channel mediator (`vbf2.t-channel`)
+<img src="examples/vbf_hph0_mucol.png" alt="VBF2" width="200"/> 
