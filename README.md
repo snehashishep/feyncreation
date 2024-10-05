@@ -4,7 +4,7 @@
 
 ## Features
 
-- Currently has four classes of diagrams: `decay` for 1 -> 2 processes, ` `twotwo` that handles 2->2 processes, `vbf1` that has VBF-type production of single particles, and `vbf2` with VBF-type pair production.
+- Currently has four classes of diagrams: `decay` for 1 -> 2 processes, `twotwo` that handles 2->2 processes, `vbf1` that has VBF-type production of single particles, and `vbf2` with VBF-type pair production.
 - Has four-point contact annihilation, s-channel, and t-channel diagrams for `twotwo` and `vbf2` processes.
 - Has2 2-body, 3-body, and triangle diagrams for the `decay` processes.
 - Uses LaTeX to render particle labels in diagrams.
