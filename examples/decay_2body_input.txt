@@ -1,0 +1,6 @@
+diagram_class = decay
+decay_type = 2-body
+process = h+ > z w+
+io_arrows = 
+output_filename = examples/hpzw
+

@@ -2,7 +2,7 @@ from feyncreation.common import config
 from feyncreation.common.particles import particle_styles, particle_dict  # Import styles for different particles
 import os
 import readline
-from feyncreation.diagram_input import twotwo_input, vbf1_input, vbf2_input
+from feyncreation.diagram_input import twotwo_input, vbf1_input, vbf2_input, decay_input
 
 # Improved path completer for both directories and files
 def complete_path(text, state):
@@ -48,6 +48,16 @@ def get_user_input_from_card(card_path):
         vbf1_input.handle_vbf1_card(input_data)
     elif diagram_class == 'vbf2':
         vbf2_input.handle_vbf2_card(input_data)
+    elif diagram_class == 'decay':
+        decay_type = input_data.get('decay_type', '2-body')
+        if decay_type == '2-body':
+            decay_input.handle_decay_two_body_card(input_data)
+        elif decay_type == '3-body':
+            decay_input.handle_decay_three_body_card(input_data)
+        elif decay_type == 'triangle':
+            decay_input.handle_decay_triangle_card(input_data)
+        else:
+            print(f"Decay type '{decay_type}' not recognized.")
     else:
         print(f"Diagram class '{diagram_class}' not recognized.")
 
@@ -67,7 +77,7 @@ def get_user_input():
         else:
             print(f"Input card '{card_path}' not found.")
     else:
-        diagram_class = input("Enter the class of diagram (e.g., 'twotwo', 'vbf1', 'vbf2'): ").lower()
+        diagram_class = input("Enter the class of diagram (e.g., 'twotwo', 'vbf1', 'vbf2', 'decay'): ").lower()
         
         if diagram_class == 'twotwo':
             twotwo_input.handle_twotwo_input()
@@ -75,6 +85,16 @@ def get_user_input():
             vbf1_input.handle_vbf1_input()
         elif diagram_class == 'vbf2':
             vbf2_input.handle_vbf2_input()
+        elif diagram_class == 'decay':
+            decay_type = input("Choose decay type (2-body, 3-body, triangle): ").lower()
+            if decay_type == '2-body':
+                decay_input.handle_decay_two_body_input()
+            elif decay_type == '3-body':
+                decay_input.handle_decay_three_body_input()
+            elif decay_type == 'triangle':
+                decay_input.handle_decay_triangle_input()
+            else:
+                print(f"Decay type '{decay_type}' not recognized.")
         else:
             print(f"Diagram class '{diagram_class}' not recognized.")
 

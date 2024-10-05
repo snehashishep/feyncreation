@@ -1,0 +1,9 @@
+diagram_class = decay
+decay_type = 3-body
+process = n+ > n0 e+ ve
+offshell = w+
+add_star = yes
+io_arrows = n+ e+
+arrow_offshell = false
+output_filename = examples/npdecay
+

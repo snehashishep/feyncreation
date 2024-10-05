@@ -1,0 +1,8 @@
+diagram_class = decay
+decay_type = triangle
+process = h > gamma gamma
+triangle_arms = t t t
+io_arrows = 
+triangle_arrows = t t t
+output_filename = examples/haa-tloop
+
