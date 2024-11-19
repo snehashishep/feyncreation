@@ -7,6 +7,7 @@ particle_dict = {
     'vm': r'$\nu_\mu$', 'vmbar': r'$\bar{\nu_\mu}$', 'vt': r'$\nu_\tau$', 'vtbar': r'$\bar{\nu_\tau}$',
     'w+': r'$W^+$', 'w-': r'$W^-$', 'z': r'$Z$', 'gamma': r'$\gamma$', 'g': r'$g$', 'zp': r"$Z'$", 'h': r'$h$',
     'h2': r'$H^0$', 'h+': r'$H^+$', 'h-': r'$H^-$', 'h++': r'$H^{++}$', 'h--': r'$H^{--}$',
+    't0': r'$T^0$', 't+': r'$T^+$', 't-': r'$T^-$',
     'a0': r'$A^0$', 'del0': r'$\Delta^0$', 'del+': r'$\Delta^+$', 'del-': r'$\Delta^-$', 'del++': r'$\Delta^{++}$', 'del--': r'$\Delta^{--}$',
     'n0': r'$N^0$', 'n0bar': r'$\bar{N^0}$', 'n+': r'$N^+$', 'n-': r'$N^-$', 'n++': r'$N^{++}$', 'n--': r'$N^{--}$'
 }
@@ -33,12 +34,13 @@ particle_styles = {
     
     # Higgs and scalars (dashed line style)
     'h': dict(style='-', dashes=[5, 2]), 'h2': dict(style='-', dashes=[5, 2]), 'h+': dict(style='-', dashes=[5, 2]), 'h-': dict(style='-', dashes=[5, 2]),
+    't0': dict(style='-', dashes=[5, 2]), 't+': dict(style='-', dashes=[5, 2]), 't-': dict(style='-', dashes=[5, 2]),
     'h++': dict(style='-', dashes=[5, 2]), 'h--': dict(style='-', dashes=[5, 2]), 'del+': dict(style='-', dashes=[5, 2]), 'del-': dict(style='-', dashes=[5, 2]),
     'del++': dict(style='-', dashes=[5, 2]), 'del--': dict(style='-', dashes=[5, 2]), 'del0': dict(style='-', dashes=[5, 2]), 'a0': dict(style='-', dashes=[5, 2]),
 }
 
 # Particles that can have arrows
-arrow_particles = ['q', 'qbar', 'qp', 'qbarp', 't', 'tbar', 'b', 'bbar', 'e-', 'e+', 'mu-', 'mu+', 
+arrow_particles = ['q', 'qbar', 'qp', 'qbarp', 't', 'tbar', 'b', 'bbar', 'e-', 'e+', 'mu-', 'mu+', 't+', 't-',
     'h+', 'h-', 'h++', 'h--', 'n+', 'n-', 'n++', 'n--', 'n0', 'n0bar', 've', 'vebar', 'vm', 'vmbar', 'vt', 'vtbar', 'del+', 'del-', 'del++', 'del--']
 
 # Fermion list
